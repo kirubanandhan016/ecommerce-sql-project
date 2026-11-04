@@ -35,7 +35,7 @@ Install SQLite and ensure `sqlite3` is available in your terminal.
 ```bash
 git clone https://github.com/kirubanandhan016/ecommerce-sql-project.git
 cd ecommerce-sql-project
-sqlite3 ecommerce.db < project.sql
+sqlite3 ecommerce.db < ecommerce.sql
 ```
 
 Open the database:
