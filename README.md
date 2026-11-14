@@ -28,6 +28,38 @@ SQLite · SQL · Git
 
 One customer can place many orders. An order can contain many products through `order_items`; the stored unit price preserves the purchase price at order time.
 
+## Entity relationships
+
+```mermaid
+erDiagram
+    CUSTOMERS ||--o{ ORDERS : places
+    ORDERS ||--|{ ORDER_ITEMS : contains
+    PRODUCTS ||--o{ ORDER_ITEMS : appears_in
+    CUSTOMERS {
+        integer customer_id PK
+        text email
+        text city
+    }
+    ORDERS {
+        integer order_id PK
+        integer customer_id FK
+        text order_status
+    }
+    ORDER_ITEMS {
+        integer order_item_id PK
+        integer order_id FK
+        integer product_id FK
+        integer quantity
+        real unit_price
+    }
+    PRODUCTS {
+        integer product_id PK
+        text category
+        real price
+        integer stock
+    }
+```
+
 ## Run locally
 
 Install SQLite and ensure `sqlite3` is available in your terminal.
