@@ -97,3 +97,15 @@ It demonstrates relational modeling, constraints, joins, aggregations, and query
 ## Author
 
 **Kirubanandhan V** · [GitHub](https://github.com/kirubanandhan016) · [Portfolio](https://kirubanandhan016.github.io/)
+
+
+## Query review workflow
+
+1. Create a fresh database using the setup script.
+2. Inspect table definitions with `.schema` and verify foreign-key relationships.
+3. Run each analytical query against the same sample dataset.
+4. Compare aggregate results with small hand-calculated examples.
+5. Use `EXPLAIN QUERY PLAN` before and after adding an index; retain an index only when it supports a real access pattern.
+
+Use the stored `order_items.unit_price` for historical order revenue rather than the current product price. This preserves the price charged at the time of purchase.
+
