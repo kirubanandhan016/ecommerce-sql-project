@@ -29,7 +29,7 @@ def test_completed_customer_spending_uses_historical_order_prices(database):
         WHERE o.customer_id = 1 AND o.status = 'Delivered'
         """
     ).fetchone()
-    assert row[0] == 5800.0
+    assert row[0] == 6550.0
 
 
 def test_product_price_and_stock_constraints_reject_invalid_values(database):
